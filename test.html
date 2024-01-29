@@ -1,8 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>test voor js</title>
+    <script>
+        function getEmailDomain() {
+            let askEmail = window.prompt("Enter you email address");
+            if (askEmail.toLowerCase() === "n.eeken@novi-education.nl") {
+                alert("novi-education.nl");
+            } else if (askEmail.toLowerCase() === "t.mellink@novi.nl") {
+                alert("novi.nl");
+            } else if (askEmail.toLowerCase() === "a.wiersma@outlook.com") {
+                alert( "outlook.com")
+            }
+            return askEmail;
+        }
+
+        console.log(getEmailDomain())
+
+        function typeOfEmail (){
+            let emailChecker = window.prompt("Enter your email please");
+            if (emailChecker.includes("@novi-education")){
+                alert ("Student");
+            } else if (emailChecker.includes("@novi.nl")){
+                alert ("Medewerker");
+            }else alert("Extern")
+            return emailChecker;
+        }
+        console.log(typeOfEmail())
+
+
+
+    </script>
+
 </head>
 <body>
 

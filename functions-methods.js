@@ -9,7 +9,19 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+function getEmailDomain() {
+    let askEmail = window.prompt("Enter you email address");
+    if (askEmail.toLowerCase() === "n.eeken@novi-education.nl") {
+        alert("novi-education.nl");
+    } else if (askEmail.toLowerCase() === "t.mellink@novi.nl") {
+        alert("novi.nl");
+    } else if (askEmail.toLowerCase() === "a.wiersma@outlook.com") {
+        alert("outlook.com")
+    }
+    return askEmail;
+}
 
+console.log(getEmailDomain())
 
 
 /* Opdracht  2 */
@@ -20,7 +32,17 @@
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+function typeOfEmail() {
+    let emaiChecker = window.prompt("Enter your email please");
+    if (emaiChecker.includes("@novi-education")) {
+        alert("Student");
+    } else if (emaiChecker.includes("@novi.nl")) {
+        alert("Medewerker");
+    } else alert("Extern")
+    return emaiChecker;
+}
 
+console.log(typeOfEmail())
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
