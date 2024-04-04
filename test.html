@@ -4,33 +4,23 @@
     <meta charset="UTF-8">
     <title>test voor js</title>
     <script>
-        function getEmailDomain() {
-            let askEmail = window.prompt("Enter you email address");
-            if (askEmail.toLowerCase() === "n.eeken@novi-education.nl") {
-                alert("novi-education.nl");
-            } else if (askEmail.toLowerCase() === "t.mellink@novi.nl") {
-                alert("novi.nl");
-            } else if (askEmail.toLowerCase() === "a.wiersma@outlook.com") {
-                alert( "outlook.com")
+        function checkEmailValidity(){
+            let emailCheck = window.prompt("Enter your email please");
+            if (emailCheck.includes("@")) {
+                return true;
             }
-            return askEmail;
+            if (emailCheck.indexOf(".nl.") === -1) {
+                return false;
+            } else if (emailCheck.indexOf(",")) {
+                return false;
+                }
+            return emailCheck;
         }
 
-        console.log(getEmailDomain())
-
-        function typeOfEmail (){
-            let emailChecker = window.prompt("Enter your email please");
-            if (emailChecker.includes("@novi-education")){
-                alert ("Student");
-            } else if (emailChecker.includes("@novi.nl")){
-                alert ("Medewerker");
-            }else alert("Extern")
-            return emailChecker;
-        }
-        console.log(typeOfEmail())
-
-
-
+        console.log(checkEmailValidity())
+        console.log(checkEmailValidity())
+        console.log(checkEmailValidity())
+        console.log(checkEmailValidity())
     </script>
 
 </head>

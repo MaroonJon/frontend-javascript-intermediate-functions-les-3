@@ -9,19 +9,19 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
-function getEmailDomain() {
-    let askEmail = window.prompt("Enter you email address");
-    if (askEmail.toLowerCase() === "n.eeken@novi-education.nl") {
-        alert("novi-education.nl");
-    } else if (askEmail.toLowerCase() === "t.mellink@novi.nl") {
-        alert("novi.nl");
-    } else if (askEmail.toLowerCase() === "a.wiersma@outlook.com") {
-        alert("outlook.com")
-    }
-    return askEmail;
-}
+//function getEmailDomain() {
+//    let askEmail = window.prompt("Enter you email address");
+//    if (askEmail.toLowerCase() === "n.eeken@novi-education.nl") {
+//        alert("novi-education.nl");
+//    } else if (askEmail.toLowerCase() === "t.mellink@novi.nl") {
+//        alert("novi.nl");
+//    } else if (askEmail.toLowerCase() === "a.wiersma@outlook.com") {
+//        alert("outlook.com")
+//    }
+//    return askEmail;
+//}
 
-console.log(getEmailDomain())
+// console.log(getEmailDomain())
 
 
 /* Opdracht  2 */
@@ -32,17 +32,17 @@ console.log(getEmailDomain())
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
-function typeOfEmail() {
-    let emaiChecker = window.prompt("Enter your email please");
-    if (emaiChecker.includes("@novi-education")) {
-        alert("Student");
-    } else if (emaiChecker.includes("@novi.nl")) {
-        alert("Medewerker");
-    } else alert("Extern")
-    return emaiChecker;
-}
+// function typeOfEmail() {
+//    let emaiChecker = window.prompt("Enter your email please");
+//    if (emaiChecker.includes("@novi-education")) {
+//        alert("Student");
+//    } else if (emaiChecker.includes("@novi.nl")) {
+//        alert("Medewerker");
+//    } else alert("Extern")
+//    return emaiChecker;
+//}
 
-console.log(typeOfEmail())
+//console.log(typeOfEmail())
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
@@ -56,3 +56,23 @@ console.log(typeOfEmail())
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(emailCheck) {
+
+    if (emailCheck.indexOf("@") === -1) {
+        return false;
+    }
+    if (emailCheck.endsWith(".")) {
+        return false;
+    }
+    if (emailCheck.indexOf(",") !== -1) {
+        return false;
+    }
+    return true;
+}
+
+console.log(checkEmailValidity("n.eeken@novi.nl"))
+console.log(checkEmailValidity("tessmellink@novi.nl"))
+console.log(checkEmailValidity("n.eekenanovi.nl"))
+console.log(checkEmailValidity("n.eeken@novinl."))
+console.log(checkEmailValidity("tessmellink@novi,nl"))
